@@ -1,0 +1,27 @@
+{
+  "name": "Vote for Jean Baptiste Toche - Mister Tourism Africa Cameroon",
+  "short_name": "Vote JB Toche",
+  "description": "Support Jean Baptiste Toche in his journey to become Mister Tourism Africa Cameroon. Vote now with MTN Mobile Money or Orange Money!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["entertainment", "lifestyle", "social"],
+  "lang": "en",
+  "dir": "ltr"
+}
