@@ -48,7 +48,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, packageDat
             {packageData.price.toLocaleString()} XAF
           </div>
           <div className="text-lg text-gray-600 mb-2">
-            {packageData.points.toLocaleString()} votes
+            {packageData.points.toLocaleString()} Points
           </div>
           <div className="text-sm text-gray-500">
             Final price - no additional fees

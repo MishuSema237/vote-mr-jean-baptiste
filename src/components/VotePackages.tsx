@@ -52,7 +52,7 @@ const VotePackage = ({
             {price.toLocaleString()} XAF
           </div>
           <div className="text-lg text-gray-700">
-            {points.toLocaleString()} votes
+            {points.toLocaleString()} Points
           </div>
         </div>
         
@@ -86,14 +86,14 @@ const VotePackages = () => {
       price: 2320, // Exact Fapshi price
       points: 300,
       description: "Perfect for showing your support",
-      fapshiLink: "https://checkout.fapshi.com/link/94015726", // Your actual Fapshi checkout link
+      fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
       title: "Supporter Pack",
       price: 4640, // Exact Fapshi price
       points: 600,
       description: "Great value for dedicated fans",
-      fapshiLink: "https://checkout.fapshi.com/link/94015726", // Your actual Fapshi checkout link
+      fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
       title: "Champion Pack",
@@ -101,21 +101,21 @@ const VotePackages = () => {
       points: 750,
       description: "For true champions",
       popular: true,
-      fapshiLink: "https://checkout.fapshi.com/link/94015726", // Your actual Fapshi checkout link
+      fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
       title: "VIP Pack",
       price: 11550, // Exact Fapshi price
       points: 1550,
       description: "Premium support package",
-      fapshiLink: "https://checkout.fapshi.com/link/94015726", // Your actual Fapshi checkout link
+      fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
       title: "Ultimate Pack",
       price: 23100, // Exact Fapshi price
       points: 3500,
       description: "Maximum impact for victory",
-      fapshiLink: "https://checkout.fapshi.com/link/94015726", // Your actual Fapshi checkout link
+      fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
   ];
 
