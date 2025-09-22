@@ -25,7 +25,7 @@ interface FapshiInitiatePayRequest {
   payment_method: 'mtn' | 'orange';
   description: string;
   callback_url: string;
-  metadata?: Record<string, any>;
+      metadata?: Record<string, unknown>;
 }
 
 class FapshiService {

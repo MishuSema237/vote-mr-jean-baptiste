@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 

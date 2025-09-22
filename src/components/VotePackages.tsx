@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HeartIcon, StarIcon, TrophyIcon } from '@heroicons/react/24/solid';
+import { HeartIcon, TrophyIcon } from '@heroicons/react/24/solid';
 import PaymentModal from './PaymentModal';
 
 const VotePackage = ({ 
@@ -72,7 +72,12 @@ const VotePackage = ({
 };
 
 const VotePackages = () => {
-  const [selectedPackage, setSelectedPackage] = useState<any>(null);
+  const [selectedPackage, setSelectedPackage] = useState<{
+    title: string;
+    price: number;
+    points: number;
+    fapshiLink: string;
+  } | null>(null);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
   const packages = [
@@ -114,7 +119,12 @@ const VotePackages = () => {
     },
   ];
 
-  const handleVote = (packageData: any) => {
+  const handleVote = (packageData: {
+    title: string;
+    price: number;
+    points: number;
+    fapshiLink: string;
+  }) => {
     setSelectedPackage(packageData);
     setIsPaymentModalOpen(true);
   };
