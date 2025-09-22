@@ -5,8 +5,11 @@ import { motion } from 'framer-motion';
 import { StarIcon, TrophyIcon, HeartIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import jeanBaptisteImage from '@/assets/jean_baptiste.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
       {/* Background Pattern */}
@@ -35,7 +38,7 @@ const HeroSection = () => {
               >
                 <TrophyIcon className="w-8 h-8 text-yellow-400 mr-3" />
                 <span className="text-lg font-semibold text-yellow-400">
-                  Mister Tourism Africa Cameroon
+                  {t('hero.subtitle')}
                 </span>
               </motion.div>
               
@@ -45,8 +48,7 @@ const HeroSection = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Your vote can make the difference! Support Jean Baptiste Toche 
-                in his journey to become Mister Tourism Africa Cameroon.
+                {t('hero.description')}
               </p>
             </div>
 
@@ -58,15 +60,15 @@ const HeroSection = () => {
             >
               <div className="flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3">
                 <StarIcon className="w-5 h-5 text-yellow-400 mr-2" />
-                <span className="text-sm font-medium text-black">Tourism Ambassador</span>
+                <span className="text-sm font-medium text-black">{t('hero.badge2')}</span>
               </div>
               <div className="flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3">
                 <HeartIcon className="w-5 h-5 text-red-400 mr-2" />
-                <span className="text-sm font-medium text-black">Community Leader</span>
+                <span className="text-sm font-medium text-black">{t('hero.badge3')}</span>
               </div>
               <div className="flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3">
                 <TrophyIcon className="w-5 h-5 text-yellow-400 mr-2" />
-                <span className="text-sm font-medium text-black">Future Winner</span>
+                <span className="text-sm font-medium text-black">{t('hero.badge4')}</span>
               </div>
             </motion.div>
 
@@ -85,7 +87,7 @@ const HeroSection = () => {
                 }}
                 className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                Vote Now - Make History!
+                {t('hero.cta')}
               </button>
             </motion.div>
           </motion.div>

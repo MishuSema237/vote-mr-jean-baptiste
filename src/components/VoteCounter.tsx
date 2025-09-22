@@ -2,8 +2,11 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const VoteCounter = () => {
+  const { t } = useLanguage();
+  
   // Simulate vote counting - in real app, this would come from your database
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,17 +27,16 @@ const VoteCounter = () => {
             className="mt-12"
           >
              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 max-w-2xl mx-auto shadow-xl">
-               <h3 className="text-xl font-bold mb-4 text-white">Join the Movement!</h3>
+               <h3 className="text-xl font-bold mb-4 text-white">{t('counter.title')}</h3>
                   <p className="text-white mb-4">
-                    Be part of Jean Baptiste&apos;s journey to represent Cameroon in Mister Tourism Africa.
-                    Your support makes all the difference!
+                    {t('counter.description')}
                   </p>
                <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
                  <span className="bg-white bg-opacity-20 text-black px-3 py-1 rounded-full">
-                   🇨🇲 Proudly Cameroonian
+                   {t('hero.badge1')}
                  </span>
                  <span className="bg-white bg-opacity-20 text-black px-3 py-1 rounded-full">
-                   🌍 Tourism Ambassador
+                   {t('hero.badge2')}
                  </span>
                </div>
              </div>

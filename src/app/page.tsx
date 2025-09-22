@@ -1,10 +1,16 @@
+"use client";
+
 import React from 'react';
 import Head from 'next/head';
 import HeroSection from '@/components/HeroSection';
 import VotePackages from '@/components/VotePackages';
 import VoteCounter from '@/components/VoteCounter';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
+  
   return (
     <>
       <Head>
@@ -40,6 +46,7 @@ export default function Home() {
       </Head>
 
       <main className="min-h-screen bg-white">
+        <LanguageSwitcher />
         <HeroSection />
         <VoteCounter />
         <VotePackages />
@@ -48,12 +55,12 @@ export default function Home() {
         <footer className="bg-black text-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4">Jean Baptiste Toche</h3>
+              <h3 className="text-2xl font-bold mb-4">{t('footer.title')}</h3>
               <p className="text-gray-400 mb-6">
-                Mister Tourism Africa Cameroon Candidate
+                {t('footer.subtitle')}
               </p>
               <div className="flex justify-center space-x-6 text-sm text-gray-400">
-                <span>© 2024 All rights reserved</span>
+                <span>© 2025 {t('footer.copyright')}</span>
                 <span>•</span>
                 <span>Powered by Fapshi</span>
               </div>

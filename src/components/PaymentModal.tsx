@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -16,6 +17,8 @@ interface PaymentModalProps {
 }
 
 const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, packageData }) => {
+  const { t } = useLanguage();
+  
   const handlePayment = () => {
     // Open Fapshi payment link in new tab
     window.open(packageData.fapshiLink, '_blank');
@@ -48,10 +51,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, packageDat
             {packageData.price.toLocaleString()} XAF
           </div>
           <div className="text-lg text-gray-600 mb-2">
-            {packageData.points.toLocaleString()} Points
+            {packageData.points.toLocaleString()} {t('packages.points')}
           </div>
           <div className="text-sm text-gray-500">
-            Final price - no additional fees
+            {t('payment.finalPrice')}
           </div>
         </div>
 
@@ -73,7 +76,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, packageDat
             </div>
           </div>
           <p className="text-center text-sm text-gray-600">
-            Choose your preferred payment method on Fapshi
+            {t('payment.chooseMethod')}
           </p>
         </div>
 
@@ -83,23 +86,23 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, packageDat
             onClick={onClose}
             className="flex-1 py-4 px-6 rounded-xl border border-gray-300 text-gray-700 font-bold transition-all duration-300 hover:bg-gray-100"
           >
-            Cancel
+            {t('payment.cancel')}
           </button>
           <button
             onClick={handlePayment}
             className="flex-1 py-4 px-6 rounded-xl font-bold text-white transition-all duration-300 bg-blue-600 hover:bg-blue-700 flex items-center justify-center"
           >
             <ArrowTopRightOnSquareIcon className="w-5 h-5 mr-2" />
-            Pay with Fapshi
+            {t('payment.payWithFapshi')}
           </button>
         </div>
 
         <div className="mt-6 text-center">
           <p className="text-xs text-gray-500">
-            Secure payment powered by Fapshi
+            {t('payment.securePayment')}
           </p>
           <p className="text-xs text-gray-400 mt-1">
-            You will be redirected to Fapshi to complete your payment
+            {t('payment.redirectNotice')}
           </p>
         </div>
       </motion.div>

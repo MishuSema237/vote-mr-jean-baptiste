@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HeartIcon, TrophyIcon } from '@heroicons/react/24/solid';
 import PaymentModal from './PaymentModal';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const VotePackage = ({ 
   title, 
@@ -20,6 +21,8 @@ const VotePackage = ({
   popular?: boolean;
   onSelect: () => void;
 }) => {
+  const { t } = useLanguage();
+  
   return (
     <motion.div
       id={popular ? 'champion-pack' : undefined}
@@ -34,7 +37,7 @@ const VotePackage = ({
       {popular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-full flex justify-center">
           <div className="bg-yellow-400 text-yellow-900 px-6 py-2 rounded-full text-sm font-bold shadow-lg whitespace-nowrap">
-            Most Popular
+            {t('packages.mostPopular')}
           </div>
         </div>
       )}
@@ -52,7 +55,7 @@ const VotePackage = ({
             {price.toLocaleString()} XAF
           </div>
           <div className="text-lg text-gray-700">
-            {points.toLocaleString()} Points
+            {points.toLocaleString()} {t('packages.points')}
           </div>
         </div>
         
@@ -64,7 +67,7 @@ const VotePackage = ({
               : 'bg-black hover:bg-gray-800 text-white'
           }`}
         >
-          Vote Now
+          {t('packages.voteNow')}
         </button>
       </div>
     </motion.div>
@@ -72,6 +75,7 @@ const VotePackage = ({
 };
 
 const VotePackages = () => {
+  const { t } = useLanguage();
   const [selectedPackage, setSelectedPackage] = useState<{
     title: string;
     price: number;
@@ -82,39 +86,39 @@ const VotePackages = () => {
 
   const packages = [
     {
-      title: "Starter Pack",
+      title: t('packages.starter.title'),
       price: 2320, // Exact Fapshi price
       points: 300,
-      description: "Perfect for showing your support",
+      description: t('packages.starter.description'),
       fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
-      title: "Supporter Pack",
+      title: t('packages.supporter.title'),
       price: 4640, // Exact Fapshi price
       points: 600,
-      description: "Great value for dedicated fans",
+      description: t('packages.supporter.description'),
       fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
-      title: "Champion Pack",
+      title: t('packages.champion.title'),
       price: 5800, // Exact Fapshi price
       points: 750,
-      description: "For true champions",
+      description: t('packages.champion.description'),
       popular: true,
       fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
-      title: "VIP Pack",
+      title: t('packages.vip.title'),
       price: 11550, // Exact Fapshi price
       points: 1550,
-      description: "Premium support package",
+      description: t('packages.vip.description'),
       fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
     {
-      title: "Ultimate Pack",
+      title: t('packages.ultimate.title'),
       price: 23100, // Exact Fapshi price
       points: 3500,
-      description: "Maximum impact for victory",
+      description: t('packages.ultimate.description'),
       fapshiLink: "https://checkout.fapshi.com/link/96900443", // Your actual Fapshi checkout link
     },
   ];
@@ -139,11 +143,10 @@ const VotePackages = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Choose Your Vote Package
+              {t('packages.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Support Jean Baptiste Toche for Mister Tourism Africa Cameroon. 
-              Every vote counts towards victory!
+              {t('packages.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -178,7 +181,7 @@ const VotePackages = () => {
             <div className="flex items-center justify-center mb-4">
               <HeartIcon className="w-8 h-8 text-red-500 mr-2" />
               <span className="text-lg font-semibold text-gray-700">
-                Payment Methods
+                {t('packages.paymentMethods')}
               </span>
             </div>
             <div className="flex justify-center space-x-8 text-gray-600">
