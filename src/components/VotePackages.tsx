@@ -196,14 +196,16 @@ const VotePackages = () => {
       </div>
 
       {/* Payment Modal */}
-      <PaymentModal
-        isOpen={isPaymentModalOpen}
-        onClose={() => {
-          setIsPaymentModalOpen(false);
-          setSelectedPackage(null);
-        }}
-        packageData={selectedPackage}
-      />
+      {selectedPackage && (
+        <PaymentModal
+          isOpen={isPaymentModalOpen}
+          onClose={() => {
+            setIsPaymentModalOpen(false);
+            setSelectedPackage(null);
+          }}
+          packageData={selectedPackage}
+        />
+      )}
     </div>
   );
 };
